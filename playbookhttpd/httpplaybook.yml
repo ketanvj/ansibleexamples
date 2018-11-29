@@ -1,0 +1,21 @@
+---
+- hosts: jenkins
+  become: yes
+  tasks:
+    - name: install apache
+      yum:
+        name: httpd
+        state: latest
+    - name: start and enable apache
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+    - name: create index.html
+      file: 
+        path: /var/www/html/index.html
+        state: touch
+    - name: add a line to index.html
+      lineinfile:
+        path: /var/www/html/index.html
+        line: "<h1>Hello World!</h1>"

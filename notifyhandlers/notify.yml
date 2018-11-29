@@ -1,0 +1,20 @@
+--- # Notification and handling events
+- hosts: lab2
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  gather_facts: no
+  connection: ssh
+  tasks:
+  - name: install apache web server
+    yum:
+      name: httpd
+      state: latest
+    notify: 
+    - enable and start apache service
+  handlers:
+  - name: enable and start apache service
+    service: 
+      name: httpd
+      enabled: yes
+      state: restarted

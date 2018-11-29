@@ -1,0 +1,17 @@
+--- # This playbook shows how to use debug and register statement
+
+- hosts: lab2
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: no
+
+  tasks:
+  - name: installing telent packge
+    yum:
+     name: telnet
+     state: absent
+    register: result
+  - debug: var=result
+
