@@ -1,0 +1,11 @@
+---
+- hosts: local
+  become: yes
+  tasks:
+    - name: create users on local machine
+      user: 
+        name: "{{item}}"
+      with_items:
+        - niche
+        - paratus
+        - devops

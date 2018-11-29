@@ -1,0 +1,14 @@
+---
+
+- hosts: lab2
+  tasks: 
+    - name: create a file
+      file: 
+        path: /home/ansible/abc.txt
+        state: touch
+      register: optouch
+    - debug: msg="Registered output is {{optouch}}"
+    - name: Put the Uid in a file
+      lineinfile: 
+        path: /home/ansible/output.txt
+        line: "{{optouch.uid}}"

@@ -1,0 +1,13 @@
+---
+- hosts: local
+  tasks: 
+    - name: get files from all hosts
+      get_url: 
+        url: "http://{{item}}/index.html"
+        dest: "/tmp/{{item}}"
+      ignore_errors: yes
+      with_items:
+        - ketanvj1c
+        - ketanvj2c
+        - ketanvj3c
+        - ketanvj4c

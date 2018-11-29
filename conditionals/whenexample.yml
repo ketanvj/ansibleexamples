@@ -1,0 +1,11 @@
+---
+- hosts: jenkins
+  become: yes
+  tasks:
+    - name: edit index.html file
+      lineinfile: 
+        path: /var/www/html/index.html
+        line: "This is for when example"
+      when:
+        - ansible_hostname == "ketanvj2c"
+

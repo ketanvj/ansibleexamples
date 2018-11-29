@@ -1,0 +1,12 @@
+---
+- hosts: local 
+  tasks:
+    - name: get file
+      block: 
+        - get_url:
+            url: "http://ketanvj5c/index.html"
+            dest: "/tmp/index_file"
+      rescue: 
+        - debug: msg="The file does not exist!"
+      always:
+        - debug: msg="inside always"
