@@ -11,10 +11,11 @@
       name: httpd
       state: latest
     notify: 
-    - enable and start apache service
+    - "start webserver"
   handlers:
   - name: enable and start apache service
     service: 
       name: httpd
       enabled: yes
       state: restarted
+    listen: "start webserver"
