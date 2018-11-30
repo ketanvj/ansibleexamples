@@ -1,0 +1,20 @@
+---
+- hosts: webserver
+  become: yes
+  tasks:
+  - name: deploy application binary to webserver
+    copy: 
+      remote_src: no
+      src: /home/ansible/app/index1.html
+      dest: /var/www/html/index1.html
+    tags: 
+      - appdep
+- hosts: dbserver
+  become: yes
+  tasks:
+  - name: deploy Datbase
+    copy: 
+      src: /home/ansible/app/dbscript.sql
+      dest: /opt/db/scripts/dbscript.sql
+    tags: 
+      - dbdep

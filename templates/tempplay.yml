@@ -1,0 +1,7 @@
+---
+- hosts: local 
+  tasks:
+    - name: deply the config file
+      template: 
+        src: /home/ansible/ansibleexamples/templates/template.j2
+        dest: /home/ansible/ansibleexamples/templates/finalconfig.conf
