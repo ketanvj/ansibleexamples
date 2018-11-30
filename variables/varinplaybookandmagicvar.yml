@@ -1,0 +1,14 @@
+--- # varinplaybookandmagicvar.yml
+- hosts: local
+  vars:
+    inv_list: /home/ansible/ansibleexamples/variables/invlist.txt
+  tasks:
+  - name: Create a new file
+    file: 
+      path: "{{ inv_list }}"
+      state: touch
+  - name: copy hosts
+    lineinfile: 
+      path: "{{ inv_list }}"
+      line: "{{ groups['jenkins'] }}"
+

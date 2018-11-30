@@ -1,0 +1,16 @@
+--- # varfromfile.yml
+- hosts: local
+  vars:
+    companyFile: /home/ansible/ansibleexamples/variables/companylist.txt
+  tasks:
+  - name: create company list
+    file: 
+      state: touch
+      path: "{{ companyFile }}"
+  - name: add names 
+    lineinfile: 
+      path: "{{ companyFile }}"
+      line: "{{ item }}"
+    with_items:
+      - "{{ IT }}"
+      - "{{ nonIT }}"
