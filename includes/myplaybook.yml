@@ -1,0 +1,7 @@
+---
+- hosts: jenkins
+  become: yes
+  tasks:
+    - include: singleplay/oneplay.yml
+    - name: verify telnet is installed
+      raw: yum list installed | grep telnet > /home/ansible/pkg.log
