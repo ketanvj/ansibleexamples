@@ -1,0 +1,7 @@
+---
+- hosts: local
+  become: yes
+  roles:
+    - apache
+  vars:
+    apache_server_admin: ketanvj@varinplaybook.com
