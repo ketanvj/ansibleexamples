@@ -1,0 +1,11 @@
+all:
+  hosts: 
+    ketanvj3c.mylabserver.com
+  children:
+    jenkins:
+      hosts:
+        ketanvj[1:2]c.mylabserver.com
+    lab2:
+      hosts:
+        ketanvj2c.mylabserver.com
+
