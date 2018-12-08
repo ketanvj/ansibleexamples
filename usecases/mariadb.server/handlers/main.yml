@@ -1,0 +1,30 @@
+- name: StartDBService
+  service: name={{ dbclient_pkg }} state=started
+  listen: "Restart DB Services"
+- name: RunSecureInstallPause
+  pause: prompt="Please Run mysql_secure_installation binary and press ENTER - Playbook will restart DB Service..."
+  listen: "Restart DB Services"
+- name: RestartDBService
+  service: name={{ dbclient_pkg }} state=restarted
+  listen: "Restart DB Services"
+- name: CopyBkupFile
+  copy: src=mysqlbkup.sql dest={{ dbinstalldir }}/mysqlbkup.sql owner=root group=root mode=755
+  listen: "Restart DB Services"
+- name: CreateRemoteDB
+  shell: mysqladmin --user=root --password=password123 create {{ dbinstancename }}
+  register: result
+  listen: "Restart DB Services"
+- name: DisplayCreationResults
+  debug: var=result
+  listen: "Restart DB Services"
+- name: RestoreRemoteDB
+  shell: mysql -u root -ppassword123 {{ dbinstancename }} < {{ dbinstalldir }}/mysqlbkup.sql
+  register: result
+  listen: "Restart DB Services"
+- name: TestDBResults
+  shell: mysql -u root -ppassword123 -e 'SHOW DATABASES;'
+  register: mysqlresult
+  listen: "Restart DB Services"
+- name: ShowDBResults
+  debug: var=mysqlresult
+  listen: "Restart DB Services"

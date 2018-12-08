@@ -10,5 +10,5 @@
     - debug: msg="Registered output is {{optouch}}"
     - name: Put the Uid in a file
       lineinfile: 
-        path: /home/ansible/output.txt
-        line: "{{optouch.uid}}"
+        path: /home/ansible/abc.txt
+        line: "{{optouch.dest}}"

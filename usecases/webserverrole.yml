@@ -1,0 +1,12 @@
+--- # Master Playbook for Role Based Apache Web Deployments
+- hosts: lab2
+  become: yes
+  connection: ssh
+  pre_tasks:
+  - name: When did the ROLE start
+    raw: date > /home/ansible/startofrole.log
+  roles:
+  - redhat.apachewebserver
+  post_tasks:
+  - name: When did the ROLE end
+    raw: date > /home/ansible/endofrole.log

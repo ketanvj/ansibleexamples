@@ -1,0 +1,15 @@
+---
+- hosts: lab2
+  tasks:
+  - name: install red had
+    yum:
+      name: httpd
+      state: latest
+    when: "ansible_os_family == 'RedHat'"
+    ignore_errors: yes
+  - name: install Debian 
+    apt: 
+      name: apache2
+      state: latest
+    when: "ansible_os_family == 'Debian'"
+    ignore_errors: yes
