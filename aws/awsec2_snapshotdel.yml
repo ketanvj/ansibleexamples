@@ -12,7 +12,7 @@
       aws_access_key: "{{ aws_id }}"
       aws_secret_key: "{{ aws_key }}"
       region: "{{ aws_region }}"
-      snapshot_id: snap-014beca1bbff5444b
+      snapshot_id: snap-0d9dc9d7704b88cdf
       state: absent
       wait: no
     register: snapshot
