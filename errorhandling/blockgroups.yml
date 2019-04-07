@@ -1,10 +1,10 @@
 ---
-- hosts: local 
+- hosts: jenkins
   tasks:
     - name: get file
       block: 
         - get_url:
-            url: "http://ketanvj5c/index.html"
+            url: "http://ketanvj4c.mylabserver.com/index.html"
             dest: "/tmp/index_file"
       rescue: 
         - debug: msg="The file does not exist!"

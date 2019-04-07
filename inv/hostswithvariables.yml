@@ -1,0 +1,7 @@
+jenkins:
+  hosts:
+    ketanvj1c.mylabserver.com:
+    ketanvj4c.mylabserver.com:
+  vars:
+    ntp_server: ntp.ketanvj4c.mylabserver.com
+    proxy: proxy.ketanvj4c.mylabserver.com

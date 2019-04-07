@@ -1,7 +1,7 @@
 ---
-- hosts: lab2
+- hosts: jenkins
   tasks:
-  - name: install red had
+  - name: install Red Hat
     yum:
       name: httpd
       state: latest

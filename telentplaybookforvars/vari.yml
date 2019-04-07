@@ -6,7 +6,7 @@
   connection: ssh
   gather_facts: '{{ gather }}'
   vars:
-    myhosts: lab2
+    myhosts: local
     gather: yes
     package: telnet
   
@@ -14,4 +14,4 @@
   - name: Install the package '{{ package }}'
     yum: 
       name: '{{ package }}'
-      state: absent
+      state: present

@@ -11,3 +11,4 @@
     lineinfile: 
       path: "{{ inv_list }}"
       line: "{{ groups['jenkins'] }}"
+

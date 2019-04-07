@@ -8,7 +8,7 @@
         state: touch
       register: optouch
     - debug: msg="Registered output is {{optouch}}"
-    - name: Put the Uid in a file
+    - name: Put the dest and gid in a file
       lineinfile: 
         path: /home/ansible/abc.txt
-        line: "{{optouch.dest}}"
+        line: "{{optouch.dest}}:{{optouch.gid}}"

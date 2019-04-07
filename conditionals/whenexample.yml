@@ -5,7 +5,7 @@
     - name: edit index.html file
       lineinfile: 
         path: /var/www/html/index.html
-        line: "This is for when example"
+        line: "This is for when example Apr19"
       when:
         - ansible_hostname == "ketanvj2c"
 

@@ -1,1 +1,3 @@
 ['ketanvj1c.mylabserver.com', 'ketanvj2c.mylabserver.com']
+['ketanvj1c.mylabserver.com', 'ketanvj6c.mylabserver.com']
+['ketanvj1c.mylabserver.com', 'ketanvj4c.mylabserver.com']

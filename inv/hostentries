@@ -1,0 +1,4 @@
+[all]
+localhost              ansible_connection=local
+ketanvj1c.mylabserver.com     ansible_connection=ssh        ansible_user=ansible
+ketanvj4c.mylabserver.com     ansible_connection=ssh        ansible_user=ansible
