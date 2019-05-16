@@ -8,6 +8,7 @@
       ignore_errors: yes
       with_items:
         - ketanvj1c
+        - ketanvj9c
         - ketanvj2c
         - ketanvj3c
         - ketanvj4c

@@ -1,5 +1,5 @@
 --- # Master Playbook for Role Based Apache Web Deployments
-- hosts: ubuntu
+- hosts: lab1
   become: yes
   connection: ssh
   pre_tasks:
