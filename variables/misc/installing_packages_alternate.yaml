@@ -1,0 +1,11 @@
+---
+- name: Install packages
+  hosts: local
+  become: yes
+  tasks:
+  - name: Install software
+    yum:
+      name:
+        - elinks
+        - git
+      state: present

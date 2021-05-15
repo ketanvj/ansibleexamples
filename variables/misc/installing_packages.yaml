@@ -1,0 +1,13 @@
+---
+- name: Install packages
+  hosts: centos
+  become: yes
+  vars:
+    packages:
+    - elinks
+    - git
+  tasks:
+  - name: Install software
+    yum:
+      name: "{{ packages }}"
+      state: present

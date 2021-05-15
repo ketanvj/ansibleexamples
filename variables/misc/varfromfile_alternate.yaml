@@ -1,0 +1,10 @@
+---
+- hosts: local
+  become: yes
+  vars_files:
+    - /home/ansible/ansibleexamples/variables/misc/user_data.yaml
+  tasks:
+    - name: Create the user {{user_name}}
+      user:
+        name: "{{user_name}}"
+        state: "{{user_state}}"

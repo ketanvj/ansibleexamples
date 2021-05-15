@@ -1,0 +1,22 @@
+---
+- hosts: local
+  become: yes
+  vars: 
+    users:
+      aditya:
+        uname: aditya
+        fname: Aditya
+        lname: Atwal
+        home: /home/aditya
+        shell: /bin/bash
+      carlotta:
+        uname: carlotta
+        fname: Carlotta
+        lname: Spencer
+        home: /home/carlotta
+        shell: /bin/zsh
+  tasks:
+    - name: "Create the user {{user_name}}"
+      user:
+        name: "{{users['aditya']['fname']}}"
+        state: present
