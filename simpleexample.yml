@@ -1,6 +1,6 @@
 ---
 - name: install and restart apache
-  hosts: lab2
+  hosts: one
   remote_user: ansible
   become: yes
 

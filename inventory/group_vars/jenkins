@@ -1,1 +1,2 @@
-logs: /var/log/messages
+logs: /etc/ansible/ansible.cfg
+type: linux

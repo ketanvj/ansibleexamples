@@ -1,0 +1,5 @@
+opt_dir: /opt
+ansible_host: 192.12.2.11
+ansible_port: 3036
+ansible_user: ansible
+ansible_become: true
