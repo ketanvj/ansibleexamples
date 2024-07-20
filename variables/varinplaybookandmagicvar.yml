@@ -1,7 +1,7 @@
 --- # varinplaybookandmagicvar.yml
-- hosts: local
+- hosts: ec2
   vars:
-    inv_list: /home/ansible/ansibleexamples/variables/invlist.txt
+    inv_list: /home/ansible/inv/invlist.txt
   tasks:
   - name: Create a new file
     file: 
@@ -10,4 +10,4 @@
   - name: copy hosts
     lineinfile: 
       path: "{{ inv_list }}"
-      line: "{{ groups['jenkins'] }}"
+      line: "Servers under K8s groups are {{ groups['k8s'] }}"

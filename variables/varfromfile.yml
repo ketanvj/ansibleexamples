@@ -1,7 +1,7 @@
 --- # varfromfile.yml
-- hosts: local
+- hosts: ec2
   vars:
-    companyFile: /home/ansible/ansibleexamples/variables/companylist.txt
+    companyFile: /home/ansible/companylist.txt
   tasks:
   - name: create company list
     file: 

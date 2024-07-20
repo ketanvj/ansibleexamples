@@ -1,6 +1,6 @@
 ---
 
-- hosts: lab2
+- hosts: ec2
   tasks: 
     - name: create a file
       file: 

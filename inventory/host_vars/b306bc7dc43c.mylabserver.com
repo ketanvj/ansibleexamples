@@ -1,0 +1,1 @@
+logs: /home/ansible/ansibleexamples
